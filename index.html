@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mumbai Living Lab Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
 
+<h3>Living Labs in Mumbai</h3>
+<div id="map" style="height: 500px;"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Center map on Mumbai
+  var map = L.map('map').setView([19.0760, 72.8777], 11);
+
+  // OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Example markers
+  L.marker([19.0216117, 72.8705325]).addTo(map)
+    .bindPopup("Vidyalankar institute of Technology");
+
+  L.marker([19.1136, 72.8697]).addTo(map)
+    .bindPopup("Andheri – Innovation Hub");
+
+  L.marker([18.9388, 72.8354]).addTo(map)
+    .bindPopup("Colaba – NGO Partner");
+</script>
+
+</body>
+</html>
